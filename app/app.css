@@ -31,7 +31,7 @@
 */
 .version-footer {
   margin-top: 20px;
-  
+  font-size: 12px
 }
 
 .jumbotron .container {
@@ -43,6 +43,7 @@
   background-image: url(./video/video.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: #2E2C2C 13px solid;
 }
 
 .jumbotron h1 {
@@ -51,13 +52,24 @@
 }
 
 .nav img {
-  height: 30px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .nav {
   color: #000;
 }
 
-.nav li {
-  display: inline;
+.nav a {
+      color: #232323;
 }
+
+.nav ul {
+  display: inline-flex;
+}
+
+
+/*.nav li {
+  display: inline;
+}*/
