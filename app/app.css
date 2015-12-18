@@ -1,5 +1,5 @@
 /* app css stylesheet */
-
+/*
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -28,9 +28,36 @@
   content: "";
   padding: 0;
 }
-
-.center {
-  margin-right: auto;
-  margin-left: auto;
+*/
+.version-footer {
+  margin-top: 20px;
+  
 }
 
+.jumbotron .container {
+  font-family: 'Roboto Slab', serif;
+}
+
+.jumbotron {
+  height: 500px;
+  background-image: url(./video/video.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav img {
+  height: 30px;
+}
+
+.nav {
+  color: #000;
+}
+
+.nav li {
+  display: inline;
+}
