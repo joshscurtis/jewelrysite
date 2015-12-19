@@ -42,7 +42,7 @@ body {
 .jumbotron h1 {
   color: #fff;
   font-weight: bold;
-  font-size: 96px;
+  font-size: 56px;
 }
 
 .nav img {
@@ -74,4 +74,16 @@ body {
 .nav li {
   padding-right: 20px;
   font-weight: bold;
+}
+
+.gallery img {
+  height: 225px;
+}
+
+.gallery div {
+  margin-top: 15px;
+}
+
+.gallery a {
+  width: auto;
 }
