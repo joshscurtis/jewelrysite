@@ -42,6 +42,7 @@ body {
 .jumbotron h1 {
   color: #fff;
   font-weight: bold;
+  font-size: 96px;
 }
 
 .nav img {
@@ -56,12 +57,19 @@ body {
 
 .nav a {
       color: #232323;
+      font-size: 18px;
 }
 
 .nav ul {
   display: inline-flex;
+  margin-top: 15px;
 }
 
 .nav div {
   margin-bottom: 10px;
+}
+
+.nav li {
+  padding-right: 20px;
+  font-weight: bold;
 }
