@@ -35,7 +35,7 @@ body {
   background-image: url(./video/video.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: #2E2C2C 13px solid;
+  border-bottom: #2E2C2C 6px solid;
 }
 
 
@@ -46,7 +46,7 @@ body {
 }
 
 .nav img {
-  height: 50px;
+  height: 75px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -58,6 +58,7 @@ body {
 .nav a {
       color: #232323;
       font-size: 18px;
+
 }
 
 .nav ul {
@@ -67,6 +68,7 @@ body {
 
 .nav div {
   margin-bottom: 10px;
+
 }
 
 .nav li {
