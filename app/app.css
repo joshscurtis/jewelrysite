@@ -10,6 +10,8 @@ body {
 
 }
 
+.grid-item { width: 3500px; }
+
 .footer {
   position: absolute;
   bottom: 0;

@@ -1,5 +1,23 @@
 <script src="./app/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
-<div class="gallery" style="padding:30px;">
+<div class="grid">
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  <div class="grid-item"><a href=""><img src="./images/hex.png"></a></div>
+  
+</div>
+
+<script>
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+ </script>
+<!-- <div class="gallery" style="padding:30px;">
 	<div class="col-md-4">
 		<a href="#" class="thumbnail">
 			<img src="./images/hex.png">
@@ -32,4 +50,4 @@
 	</div>
 	
 	
-</div>
+</div> -->

@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<style>
+	
+.grid {
+	/*margin: 30px;*/
+}
+
+	.grid-item { 
+		width: 400px;
+		/*margin: 5px; */
+	}
+
+	.grid-item:hover {
+		width: 410px;
+	}
+	
+	.grid-item--width2 { 
+		width: 400px; 
+	}
+
+	img {
+		width: 400px;
+
+	}
+
+	span {
+		position: absolute; 
+   		top: 200px; 
+   		left: 0; 
+   		width: 100%;
+   		color: #fff;
+   		display: none; 
+	}
+
+
+
+
+
+</style>
+<script src="/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+</head>
+<body>
+<div class="grid">
+  <div class="grid-item"><a href=""><img src="images/bronson.png"><span>bronson</span></a></div>
+  <div class="grid-item"><a href=""><img src="images/skull.JPG"></a></div>
+  <div class="grid-item"><a href=""><img src="images/crowley.JPG"></a></div>
+  
+</div>
+<script>
+
+$('.grid').masonry();
+
+/*var elem = document.querySelector('.grid');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+
+// element argument can be a selector string
+//   for an individual element
+var msnry = new Masonry( '.grid', {
+  // options
+});*/
+</script>
+</body>
+</html>
