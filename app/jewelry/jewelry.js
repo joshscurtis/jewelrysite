@@ -9,30 +9,14 @@ myApp_Jewelry_Module.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-myApp_Jewelry_Module.controller('JewelryCtrl', [function() {
+myApp_Jewelry_Module.controller('JewelryCtrl', ['$scope',function($scope) {
 
-
-	var products = [
-		{
-			name: "bronson",
-			slug: "bronson"
-		},
-		{
-			name: "poppy",
-			slug: "poppy"
-		}
-	];
-
-	console.log(products);
-
-	/*console.log('start');
 	var moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
 	moltin.Authenticate(function() {
-  		console.log('authenticated');
-  		// Make your calls here
-  		var products = moltin.Product.List({status:0});
-  		console.log(products[0].slug);
-
-	});*/
+  		$scope.products = moltin.Product.List({status:0});
+  		if ( $scope.products.length === 0 ) {
+  			console.log("Somethings wrong");
+  		}
+	});
 
 }]);
