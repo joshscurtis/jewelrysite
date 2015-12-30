@@ -16,6 +16,9 @@ myApp_Jewelry_Module.controller('JewelryCtrl', ['$scope',function($scope) {
   		$scope.products = moltin.Product.List({status:0});
   		if ( $scope.products.length === 0 ) {
   			console.log("Somethings wrong");
+  		} else {
+  			$('.grid').masonry();
+  			console.log('masonry call');
   		}
 	});
 

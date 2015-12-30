@@ -10,7 +10,13 @@ body {
 
 }
 
-.grid-item { width: 3500px; }
+.grid-item { 
+  width: 400px;
+}
+
+.grid-item img {
+  width: 400px;
+}
 
 .footer {
   position: absolute;
