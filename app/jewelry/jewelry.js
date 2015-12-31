@@ -17,8 +17,10 @@ myApp_Jewelry_Module.controller('JewelryCtrl', ['$scope',function($scope) {
   		if ( $scope.products.length === 0 ) {
   			console.log("Somethings wrong");
   		} else {
+        console.log($scope.products);
   			$('.grid').masonry();
   			console.log('masonry call');
+
   		}
 	});
 

@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.jewelry',
+  'myApp.detail',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
