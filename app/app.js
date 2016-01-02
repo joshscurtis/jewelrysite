@@ -6,6 +6,8 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.jewelry',
   'myApp.detail',
+  'myApp.cart',
+  'myApp.checkout',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
