@@ -18,7 +18,7 @@ myApp_Jewelry_Module.controller('JewelryCtrl', ['$scope',function($scope) {
   			console.log("Somethings wrong");
   		} else {
         console.log($scope.products);
-  			$('.grid').masonry();
+  			/*$('.grid').masonry();*/
   			console.log('masonry call');
 
   		}

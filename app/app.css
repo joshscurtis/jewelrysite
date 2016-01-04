@@ -55,45 +55,6 @@ body {
   font-size: 56px;
 }
 
-.nav img {
-  height: 75px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.nav {
-  color: #000;
-}
-
-.nav a {
-      color: #232323;
-      font-size: 18px;
-
-}
-
-.nav ul {
-  display: inline-flex;
-  margin-top: 15px;
-}
-
-.nav div {
-  margin-bottom: 10px;
-
-}
-
-.nav li {
-  padding-right: 20px;
-  font-weight: bold;
-}
-
-.gallery img {
-  height: 225px;
-}
-
-.gallery div {
-  margin-top: 15px;
-}
-
-.gallery a {
-  width: auto;
+.navbar-brand a {
+  margin-top: 8px;
 }
