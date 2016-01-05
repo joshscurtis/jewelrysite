@@ -11,18 +11,13 @@ myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
 
 myApp_Detail_Module.controller('DetailCtrl', ['$scope','$routeParams',function($scope,$routeParams) {
   
-  console.log($routeParams.itemId);
-
-  var moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
-  moltin.Authenticate(function() {
-
-    $scope.item = moltin.Product.Get(String($routeParams.itemId));
-
-
-    
-
-   
-
-  });
+  // loop through products array, find product matching itemId
+  console.log($scope.products);
+  for ( var product in $scope.products) {
+   	if ( $scope.products[product].id === $routeParams.itemId ) {
+  		$scope.item=$scope.products[product];
+  		break;
+  	}
+  }
 
 }]);
