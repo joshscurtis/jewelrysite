@@ -10,4 +10,5 @@ myApp_Jewelry_Module.config(['$routeProvider', function($routeProvider) {
 }])
 
 myApp_Jewelry_Module.controller('JewelryCtrl', ['$scope',function($scope) {
+  
 }]);
