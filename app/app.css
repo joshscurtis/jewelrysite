@@ -11,11 +11,12 @@ body {
 }
 
 .grid-item { 
-  width: 400px;
+  width: 300px;
+  margin: auto;
 }
 
 .grid-item img {
-  width: 400px;
+  width: 300px;
 }
 
 .footer {
