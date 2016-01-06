@@ -11,6 +11,15 @@ myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
 
 myApp_Detail_Module.controller('DetailCtrl', ['$scope','$routeParams',function($scope,$routeParams) {
   
+  $scope.addToCart = function (id,qty) {
+    $scope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
+      console.log(cart);
+      $scope.cart = $scope.moltin.Cart.Contents();
+    }, function(error) {
+    // Something went wrong...
+    });
+  }
+
   // loop through products array, find product matching itemId
   console.log($scope.products);
   for ( var product in $scope.products) {

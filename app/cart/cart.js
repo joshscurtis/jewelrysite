@@ -10,5 +10,5 @@ myApp_Cart_Module.config(['$routeProvider', function($routeProvider) {
 }])
 
 myApp_Cart_Module.controller('CartCtrl', ['$scope',function($scope) {
-
+	$scope.cart = $scope.moltin.Cart.Contents();
 }]);
