@@ -27,8 +27,10 @@ controller('myAppMainController',['$scope',function($scope){
   if ( $scope.products.length === 0 ) {
     console.log("Somethings wrong");
   } else {
-    console.log($scope.products);
+    //console.log($scope.products);
     console.log('successfully pulled products from moltin');      
   }
+
+  $scope.cart = [];
 
 }]);

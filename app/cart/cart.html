@@ -1,13 +1,24 @@
 <table class=table> 
 	<thead> 
-		<tr> <th>Name</th> <th>Quantity</th> <th>Item Price</th> <th>Item Total</th> </tr> 
+		<tr> <th>Name</th> <th>Item Price</th> <th>Quantity</th> <th>Item Total</th> </tr> 
 	</thead> 
 	<tbody> 
-		<tr> <th scope=row>Bronson</th> <td>1</td> <td>$350</td> <td>$350</td> </tr> 
+		<!-- <tr> <th scope=row>Bronson</th> <td>1</td> <td>$350</td> <td>$350</td> </tr> 
 		<tr> <th scope=row>Poppy</th> <td>2</td> <td>$300</td> <td>$300</td> </tr> 
-		<tr> <th scope=row>Lady</th> <td>1</td> <td>$300</td> <td>$300</td> </tr> 
+		<tr> <th scope=row>Lady</th> <td>1</td> <td>$300</td> <td>$300</td> </tr> --> 
+		<tr ng-repeat="item in cart">
+			<td>{{ item.name }}</td>
+			<td>{{ item.pricing.formatted.without_tax }}</td>
+			<td>{{ item.quantity }}</td>
+			<td>{{ item.totals.post_discount.formatted.without_tax}}</td>
+		</tr>
 		<tr> <th scope=row> </th> <td> </td> <td> </td> <td> </td> </tr> 
-		<tr> <th scope=row> </th> <td> </td> <td>Total</td> <td>$300</td> </tr>
+		<tr> <th scope=row> </th> <td> </td> <td>Total</td> <td>{{ cartFull.totals.post_discount.formatted.without_tax }}</td> </tr>
 	</tbody> 
 </table>
-{{ cart }}
+<!-- {{ cart[0].name }} -->
+
+<!-- <div ng-repeat="item in cart" class="grid-item">
+	{{ item.name }}
+</div>
+ -->
