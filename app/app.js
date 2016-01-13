@@ -15,11 +15,7 @@ config(['$routeProvider', function($routeProvider) {
 }]).
 controller('myAppMainController',['$rootScope',function($rootScope){
 
-	console.log('entering main controller');
-
 	$rootScope.moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
-	
-	console.log('starting moltin auth');
 
   $rootScope.moltin.Authenticate();
 	
@@ -27,8 +23,7 @@ controller('myAppMainController',['$rootScope',function($rootScope){
   if ( $rootScope.products.length === 0 ) {
     console.log("Somethings wrong");
   } else {
-    //console.log($scope.products);
-    console.log('successfully pulled products from moltin');      
+    //console.log($scope.products);      
   }
 
   $rootScope.moltin.Cart.Contents(function(items) {

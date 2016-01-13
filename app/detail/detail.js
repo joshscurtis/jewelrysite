@@ -13,7 +13,6 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
   
   $rootScope.addToCart = function (id,qty) {
     $rootScope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
-      console.log(cart);
       $rootScope.moltin.Cart.Contents(function(items) {
         $rootScope.cart = items;
         $rootScope.cartCount=items.total_items;
@@ -25,7 +24,6 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
   }
 
   // loop through products array, find product matching itemId
-  console.log($rootScope.products);
   for ( var product in $rootScope.products) {
    	if ( $rootScope.products[product].id === $routeParams.itemId ) {
   		$rootScope.item=$rootScope.products[product];
