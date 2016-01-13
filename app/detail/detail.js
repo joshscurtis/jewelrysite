@@ -9,22 +9,26 @@ myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-myApp_Detail_Module.controller('DetailCtrl', ['$scope','$routeParams',function($scope,$routeParams) {
+myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',function($rootScope,$routeParams) {
   
-  $scope.addToCart = function (id,qty) {
-    $scope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
+  $rootScope.addToCart = function (id,qty) {
+    $rootScope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
       console.log(cart);
-      $scope.cart = $scope.moltin.Cart.Contents();
+      $rootScope.moltin.Cart.Contents(function(items) {
+        $rootScope.cart = items;
+        $rootScope.cartCount=items.total_items;
+        $rootScope.$apply();
+  });
     }, function(error) {
     // Something went wrong...
     });
   }
 
   // loop through products array, find product matching itemId
-  console.log($scope.products);
-  for ( var product in $scope.products) {
-   	if ( $scope.products[product].id === $routeParams.itemId ) {
-  		$scope.item=$scope.products[product];
+  console.log($rootScope.products);
+  for ( var product in $rootScope.products) {
+   	if ( $rootScope.products[product].id === $routeParams.itemId ) {
+  		$rootScope.item=$rootScope.products[product];
   		break;
   	}
   }

@@ -13,24 +13,29 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/home'});
 }]).
-controller('myAppMainController',['$scope',function($scope){
+controller('myAppMainController',['$rootScope',function($rootScope){
 
 	console.log('entering main controller');
 
-	$scope.moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
+	$rootScope.moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
 	
 	console.log('starting moltin auth');
 
-  $scope.moltin.Authenticate();
+  $rootScope.moltin.Authenticate();
 	
-  $scope.products = $scope.moltin.Product.List({status:0});
-  if ( $scope.products.length === 0 ) {
+  $rootScope.products = $rootScope.moltin.Product.List({status:0});
+  if ( $rootScope.products.length === 0 ) {
     console.log("Somethings wrong");
   } else {
     //console.log($scope.products);
     console.log('successfully pulled products from moltin');      
   }
 
-  $scope.cart = [];
+  $rootScope.moltin.Cart.Contents(function(items) {
+        $rootScope.cart = items;
+        $rootScope.cartCount=items.total_items;
+        $rootScope.$apply();
+  });
+  
 
 }]);
