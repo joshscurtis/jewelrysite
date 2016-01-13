@@ -27,6 +27,7 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
   for ( var product in $rootScope.products) {
    	if ( $rootScope.products[product].id === $routeParams.itemId ) {
   		$rootScope.item=$rootScope.products[product];
+      console.log($rootScope.item);
   		break;
   	}
   }
