@@ -11,13 +11,13 @@ myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
 
 myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',function($rootScope,$routeParams) {
   
-  $rootScope.addToCart = function (id,qty) {
+  $rootScope.addToCart = function () {
     $rootScope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
       $rootScope.moltin.Cart.Contents(function(items) {
         $rootScope.cart = items;
         $rootScope.cartCount=items.total_items;
         $rootScope.$apply();
-  });
+      });
     }, function(error) {
     // Something went wrong...
     });
@@ -27,7 +27,6 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
   for ( var product in $rootScope.products) {
    	if ( $rootScope.products[product].id === $routeParams.itemId ) {
   		$rootScope.item=$rootScope.products[product];
-      console.log($rootScope.item);
   		break;
   	}
   }

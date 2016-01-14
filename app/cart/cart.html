@@ -4,10 +4,11 @@
 	</thead> 
 	<tbody> 
 		<tr ng-repeat="item in cart.contents">
-			<td>{{ item.name }}</td>
+			<td><a href="/#/detail/{{ item.id }}"> {{ item.name }}</a></td>
 			<td>{{ item.pricing.formatted.without_tax }}</td>
 			<td>{{ item.quantity }}</td>
 			<td>{{ item.totals.post_discount.formatted.without_tax}}</td>
+			<td><button ng-click="removeFromCart(item.id);"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
 		</tr>
 		<tr> <th scope=row> </th> <td> </td> <td> </td> <td> </td> </tr> 
 		<tr> <th scope=row> </th> <td> Total </td> <td></td> <td>{{ cart.totals.post_discount.formatted.without_tax }}</td> </tr>
