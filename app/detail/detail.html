@@ -1,4 +1,9 @@
 <div class="container"  style="padding: 20px;  height: 100%;">
+	<div id="slidedown">
+		<span>This piece has been added to your cart!</span><br>
+		<a class="button" href="/#/jewelry">Go to back to Jewelry</a><br>
+		<a class="button" href="/#/cart">Go to Cart</a>
+	</div>
 	<div class="col-md-6">
 		<img class="img-responsive" src="images/{{ item.slug }}.png">
 	</div>
@@ -8,4 +13,5 @@
 		<button ng-click="addToCart();">Add to cart</button>
 		<p style="margin-top:15px;">{{ item.description }}</p>
 	</div>
+	
 </div>

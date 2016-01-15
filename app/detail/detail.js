@@ -13,6 +13,7 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
   
   $rootScope.addToCart = function () {
     $rootScope.moltin.Cart.Insert(String($routeParams.itemId), '1', null, function(cart) {
+      $('#slidedown').toggleClass('on');
       $rootScope.moltin.Cart.Contents(function(items) {
         $rootScope.cart = items;
         $rootScope.cartCount=items.total_items;
