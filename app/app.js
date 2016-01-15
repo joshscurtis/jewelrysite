@@ -23,7 +23,7 @@ controller('myAppMainController',['$rootScope',function($rootScope){
   if ( $rootScope.products.length === 0 ) {
     console.log("Somethings wrong");
   } else {
-    //console.log($scope.products);      
+    console.log($rootScope.products);      
   }
 
   $rootScope.moltin.Cart.Contents(function(items) {
