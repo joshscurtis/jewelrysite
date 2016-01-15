@@ -1,5 +1,7 @@
 <!-- <script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script> -->
-<div ng-repeat="product in products" class="grid-item">
-	<a href="/#/detail/{{ product.id }}"><img src="images/{{ product.slug }}.png"></a>
+<div class="container" style="padding:25px; margin: auto;">
+<div ng-repeat="product in products" class="col-md-6" style="padding-top:15px;">
+	<a href="/#/detail/{{ product.id }}"><img class="img-responsive" src="images/{{ product.slug }}.png"></a>
+</div>
 </div>
 
