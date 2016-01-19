@@ -32,9 +32,9 @@ myApp_Cart_Module.controller('CartCtrl', ['$rootScope',function($rootScope) {
         $rootScope.$apply();
     	});
 
-	}, function(error) {
-    // Something went wrong...
-	});
+  	}, function(error) {
+      // Something went wrong...
+  	});
   };
 
 
@@ -42,6 +42,7 @@ myApp_Cart_Module.controller('CartCtrl', ['$rootScope',function($rootScope) {
         $rootScope.cart = items;
         $rootScope.cartCount=items.total_items;
         $rootScope.$apply();
+        console.log($rootScope.cart);
   });
   
 }]);
