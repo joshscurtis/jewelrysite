@@ -10,27 +10,14 @@
 	<div class="col-md-6">
 		<h1>{{ item.title }}</h1>
 		<h3>{{ item.price.value }}</h3>
-		<button ng-click="addToCart();">Add to cart</button>
-		<div ng-repeat="modifier in item.modifiers">
-		{{ modifier.title }}<select>
-      		<option ng-repeat="option in modifier.variations" value="{{option.id}}">{{option.title}}</option>
-    	</select>
-	</div>
+		<form novalidate class="simple-form">
+			<div ng-repeat="modifier in item.modifiers">
+				<select ng-model="modifier.chosen">
+					<option ng-repeat="variation in modifier.variations" value="{{ variation.id }}">{{ variation.title }}</option>
+				</select>
+			</div>
+			<button ng-click="addToCart();">Add to cart</button>			
+		</form>
 		<p style="margin-top:15px;">{{ item.description }}</p>
 	</div>
-	
-	
-
 </div>
-
-
-<!-- <div ng-controller="ExampleController">
-  <form name="myForm">
-    <label for="repeatSelect"> Repeat select: </label>
-    <select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">
-      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
-    </select>
-  </form>
-  <hr>
-  <tt>repeatSelect = {{data.repeatSelect}}</tt><br/>
-</div> -->
