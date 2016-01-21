@@ -12,8 +12,7 @@
 		<h3>{{ item.price.value }}</h3>
 		<form novalidate class="simple-form">
 			<div ng-repeat="modifier in item.modifiers">
-				<select ng-model="modifier.chosen">
-					<option ng-repeat="variation in modifier.variations" value="{{ variation.id }}">{{ variation.title }}</option>
+				{{ modifier.title }} <select ng-model="modifier.chosen" ng-options="variation as variation.title for variation in modifier.variations track by variation.id">
 				</select>
 			</div>
 			<button ng-click="addToCart();">Add to cart</button>			

@@ -25,8 +25,10 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
     var mods = {};
 
     for (var m in $rootScope.item.modifiers ){
-      mods[m]=$rootScope.item.modifiers[m].chosen;
+      mods[m]=$rootScope.item.modifiers[m].chosen.id;
     }
+
+    console.log($rootScope.products);
 
     // insert product with modifiers into cart
     $rootScope.moltin.Cart.Insert($rootScope.item.id,'1',mods,function(cart) {
