@@ -32,5 +32,14 @@ controller('myAppMainController',['$rootScope',function($rootScope){
         $rootScope.$apply();
   });
   
+  $rootScope.moltin.Cart.Checkout(function(cart) {
+      
+      $rootScope.checkoutCart = cart;
+      console.log($rootScope.checkoutCart);
+
+  }, function(error) {
+      // Something went wrong...
+  });
+
 
 }]);

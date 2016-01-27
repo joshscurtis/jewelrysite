@@ -39,6 +39,16 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
         $rootScope.cart = items;
         $rootScope.cartCount=items.total_items;
         $rootScope.$apply();
+
+        $rootScope.moltin.Cart.Checkout(function(cart) {
+      
+      $rootScope.checkoutCart = cart;
+      console.log($rootScope.checkoutCart);
+
+  }, function(error) {
+      // Something went wrong...
+  });
+
       });
 
     }, function(error) {

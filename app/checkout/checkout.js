@@ -9,19 +9,16 @@ myApp_Checkout_Module.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-myApp_Checkout_Module.controller('CheckoutCtrl', ['$scope',function($scope) {
+myApp_Checkout_Module.controller('CheckoutCtrl', ['$rootScope',function($rootScope) {
 
-	/*var moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
-	moltin.Authenticate(function() {
-  		$scope.products = moltin.Product.List({status:0});
-  		if ( $scope.products.length === 0 ) {
-  			console.log("Somethings wrong");
-  		} else {
-        console.log($scope.products);
-  			$('.grid').masonry();
-  			console.log('masonry call');
 
-  		}
-	});*/
+  $rootScope.moltin.Cart.Checkout(function(cart) {
+      
+      $rootScope.checkoutCart = cart;
+      console.log($rootScope.checkoutCart);
+
+  }, function(error) {
+      // Something went wrong...
+  });
 
 }]);
