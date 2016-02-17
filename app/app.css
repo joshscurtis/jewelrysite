@@ -69,3 +69,22 @@ body {
 #slidedown.on {
   top: 70px;
 }
+
+a#ig:link {
+    color: white;
+}
+
+/* visited link */
+a#ig:visited {
+    color: white;
+}
+
+/* mouse over link */
+a#ig:hover {
+    color: white;
+}
+
+/* selected link */
+a#ig:active {
+    color: white;
+}
