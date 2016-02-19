@@ -13,7 +13,11 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/home'});
 }]).
-controller('myAppMainController',['$rootScope',function($rootScope){
+controller('myAppMainController',['$rootScope','$location','$window',function($rootScope,$location,$window){
+
+  $rootScope.go = function ( path ) {
+    $window.location.href=path;
+  };
 
 	$rootScope.moltin = new Moltin({publicId: 'xwXTf0jOQhpHRdbYfWpY1pKs4uO7NEGY5J8nq8AV'});
 
