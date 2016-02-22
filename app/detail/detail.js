@@ -76,9 +76,16 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams','$wind
 
   var currentIndex = $.inArray($routeParams.itemId,productIDArray);
 
-  previousProductID = productIDArray[currentIndex-1];
-  nextProductID = productIDArray[currentIndex+1];
-
+  if (typeof productIDArray[currentIndex-1] != "undefined") {
+    previousProductID = productIDArray[currentIndex-1];
+  } else {
+    previousProductID = productIDArray[(productIDArray.length-1)];
+  }
+  if (typeof productIDArray[currentIndex+1] != "undefined") {
+    nextProductID = productIDArray[currentIndex+1];
+  } else {
+    nextProductID = productIDArray[0];
+  }
 
 
 
