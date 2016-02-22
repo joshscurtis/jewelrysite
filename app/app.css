@@ -48,6 +48,11 @@ body {
   font-size: 56px;
 }
 
+.jumbotron p {
+  color: #fff;
+  font-size:14px;
+}
+
 .navbar-brand a {
   margin-top: 8px;
 }
