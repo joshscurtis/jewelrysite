@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
+  'ngTouch',
   'myApp.home',
   'myApp.jewelry',
   'myApp.detail',
@@ -27,7 +28,7 @@ controller('myAppMainController',['$rootScope','$location','$window',function($r
   if ( $rootScope.products.length === 0 ) {
     console.log("Somethings wrong");
   } else {
-    console.log($rootScope.products);      
+    //console.log($rootScope.products);      
   }
 
   $rootScope.moltin.Cart.Contents(function(items) {
@@ -39,7 +40,6 @@ controller('myAppMainController',['$rootScope','$location','$window',function($r
   $rootScope.moltin.Cart.Checkout(function(cart) {
       
       $rootScope.checkoutCart = cart;
-      console.log($rootScope.checkoutCart);
 
   }, function(error) {
       // Something went wrong...

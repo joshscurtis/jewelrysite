@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp_Detail_Module = angular.module('myApp.detail', ['ngRoute'])
+var myApp_Detail_Module = angular.module('myApp.detail', ['ngRoute','ngTouch'])
 
 myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/detail/:itemId', {
@@ -9,7 +9,9 @@ myApp_Detail_Module.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',function($rootScope,$routeParams) {
+myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams','$window',function($rootScope,$routeParams,$window) {
+
+
 
   $rootScope.addToCart = function () {
 
@@ -42,14 +44,14 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
 
         $rootScope.moltin.Cart.Checkout(function(cart) {
       
-      $rootScope.checkoutCart = cart;
-      console.log($rootScope.checkoutCart);
+          $rootScope.checkoutCart = cart;
+          console.log($rootScope.checkoutCart);
 
-  }, function(error) {
-      // Something went wrong...
+        }, function(error) {
+        // Something went wrong...
+        });
+
   });
-
-      });
 
     }, function(error) {
       console.log(JSON.stringify(mods));
@@ -57,14 +59,38 @@ myApp_Detail_Module.controller('DetailCtrl', ['$rootScope','$routeParams',functi
     });
   }
 
+
+  var previousProductID;
+  var nextProductID;
+  var productIDArray = [];
+
   // loop through products array, find product matching itemId
   for ( var product in $rootScope.products) {
+
+    productIDArray.push($rootScope.products[product].id);
+
    	if ( $rootScope.products[product].id === $routeParams.itemId ) {
   		$rootScope.item=$rootScope.products[product];
-  		break;
   	}
   }
 
+  var currentIndex = $.inArray($routeParams.itemId,productIDArray);
+
+  previousProductID = productIDArray[currentIndex-1];
+  nextProductID = productIDArray[currentIndex+1];
+
+
+
+
+  $rootScope.nextProduct = function () {
+     console.log(nextProductID);
+     $window.location.href="/#/detail/"+nextProductID;
+  }
+
+  $rootScope.previousProduct = function () {
+     console.log(previousProductID);
+     $window.location.href="/#/detail/"+previousProductID;
+  }
 
 
 
